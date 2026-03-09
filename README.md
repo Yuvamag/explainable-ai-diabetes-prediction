@@ -3,37 +3,38 @@
 ## Project Overview
 This project builds a **Machine Learning model to predict diabetes risk** and explains the predictions using **Explainable AI (XAI) techniques**.
 
-The objective is not only to classify whether a person is at **high or low risk of diabetes**, but also to provide **interpretability** so users understand **why the model made a specific prediction**.
+The goal is not only to classify whether a patient is at **high or low risk of diabetes**, but also to provide **interpretability** so users understand **why the model made a specific prediction**.
 
-The project also includes a **Streamlit web interface** for interactive predictions.
+The system also includes a **Streamlit interface** where users can input patient data and view predictions along with explanations.
 
 ---
 
 ## Features
 
-- Diabetes risk prediction using Machine Learning  
-- Model evaluation using accuracy and confusion matrix  
-- Explainable AI techniques for transparency  
-- SHAP explanations for feature impact  
-- Counterfactual explanations  
-- Interactive Streamlit interface  
+- Diabetes risk prediction using **XGBoost**
+- Model evaluation using accuracy and confusion matrix
+- Explainable AI techniques
+- Feature Importance visualization
+- SHAP explanations
+- Counterfactual explanations
+- Interactive **Streamlit web interface**
 
 ---
 
 ## Dataset
 
-The dataset contains medical attributes related to diabetes risk.
+The dataset contains medical attributes commonly used in diabetes prediction.
 
-Example features include:
+Example features:
 
-- Glucose Level  
-- Blood Pressure  
-- BMI  
-- Insulin  
-- Age  
-- Diabetes Pedigree Function  
+- Glucose
+- Blood Pressure
+- BMI
+- Insulin
+- Age
+- Diabetes Pedigree Function
 
-Dataset file included in this repository:
+Dataset included in this repository:
 
 ```
 setdiab.csv
@@ -63,24 +64,25 @@ diabetes-xai-prediction
 
 ## Machine Learning Workflow
 
-1. Load and preprocess dataset  
-2. Train machine learning model  
-3. Evaluate model performance  
-4. Generate explainability insights  
-5. Deploy Streamlit interface  
+1. Load and preprocess the dataset
+2. Split data into training and testing sets
+3. Train the **XGBoost classifier**
+4. Evaluate model performance
+5. Generate explainability outputs
+6. Deploy prediction interface using Streamlit
 
 ---
 
 ## Explainable AI Techniques Used
 
 ### Feature Importance
-Shows which features contribute the most to diabetes prediction.
+Shows which features contribute most to the prediction.
 
 ### SHAP (SHapley Additive Explanations)
 Explains how each feature influences the prediction output.
 
 ### Counterfactual Explanation
-Shows the **minimum changes required in input features** to change the prediction outcome.
+Shows how **small changes in patient attributes** could change the prediction outcome.
 
 Example:
 
@@ -95,19 +97,7 @@ Prediction could change from High Risk → Low Risk
 
 ## Installation
 
-Clone the repository:
-
-```
-git clone https://github.com/yourusername/diabetes-xai-prediction.git
-```
-
-Move into the project folder:
-
-```
-cd diabetes-xai-prediction
-```
-
-Install dependencies:
+Install the required Python libraries using:
 
 ```
 pip install -r requirements.txt
@@ -117,56 +107,55 @@ pip install -r requirements.txt
 
 ## Running the Streamlit App
 
-Run the following command:
+Run the application using:
 
 ```
 streamlit run diabetes_prediction_xai.py
 ```
 
-The application will open in your browser.
+This will open the **Streamlit interface in your browser**, where users can:
 
-You can:
-
-- Enter medical parameters  
-- Get diabetes risk prediction  
-- View explanation plots  
+- Enter patient medical parameters
+- Get diabetes risk prediction
+- View explanation plots
 
 ---
 
 ## Example Outputs
 
-The project generates several visual outputs:
+The project generates visual outputs including:
 
-- Confusion Matrix  
-- Feature Importance Plot  
-- SHAP Explanation Plot  
-- Streamlit Interface  
+- Confusion Matrix
+- Feature Importance Plot
+- SHAP Explanation Plot
+- Streamlit Prediction Interface
 
-(See the **images/** folder for screenshots)
+Screenshots of these outputs are available in the **images/** folder.
 
 ---
 
 ## Technologies Used
 
-- Python  
-- Pandas  
-- NumPy  
-- Scikit-learn  
-- Matplotlib  
-- SHAP  
-- Streamlit  
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- XGBoost
+- Matplotlib
+- SHAP
+- Streamlit
 
 ---
 
 ## Future Improvements
 
-- Improve counterfactual explanation generation  
-- Add advanced models like Random Forest or XGBoost  
-- Deploy the application online  
-- Integrate additional medical datasets  
+- Improve counterfactual explanation generation
+- Add additional medical datasets
+- Compare multiple ML models
+- Deploy the application online
 
 ---
 
 ## Author
 
-Student Project – Machine Learning and Explainable AI
+Student Project – Machine Learning & Explainable AI
