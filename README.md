@@ -1,161 +1,162 @@
-# Explainable AI for Diabetes Risk Prediction
+# 🧠 Explainable AI for Diabetes Prediction using SHAP, LIME & Counterfactual Analysis
 
-## Project Overview
-This project builds a **Machine Learning model to predict diabetes risk** and explains the predictions using **Explainable AI (XAI) techniques**.
+## 🚀 Overview
+This project builds an **interpretable machine learning system** for predicting diabetes risk using clinical data.
 
-The goal is not only to classify whether a patient is at **high or low risk of diabetes**, but also to provide **interpretability** so users understand **why the model made a specific prediction**.
+Unlike traditional "black-box" models, this system focuses on **transparency, interpretability, and actionable insights** by combining prediction with human-understandable explanations.
 
-The system also includes a **Streamlit interface** where users can input patient data and view predictions along with explanations.
-
----
-
-## Features
-
-- Diabetes risk prediction using **XGBoost**
-- Model evaluation using accuracy and confusion matrix
-- Explainable AI techniques
-- Feature Importance visualization
-- SHAP explanations
-- Counterfactual explanations
-- Interactive **Streamlit web interface**
+The system integrates:
+- High-performance ML model (**XGBoost**)
+- Explainability (**SHAP & LIME**)
+- Actionable insights (**Counterfactual Explanations**)
+- Interactive simulations (**What-if Analysis via Streamlit**)
 
 ---
 
-## Dataset
+## 🎯 Problem Statement
+Early detection of diabetes is critical. However, most machine learning models:
+- Lack interpretability  
+- Provide no actionable insights  
+- Are difficult to trust in healthcare settings  
 
-The dataset contains medical attributes commonly used in diabetes prediction.
-
-Example features:
-
-- Glucose
-- Blood Pressure
-- BMI
-- Insulin
-- Age
-- Diabetes Pedigree Function
-
-Dataset included in this repository:
-
-```
-setdiab.csv
-```
+This project addresses these challenges by building a **transparent and interactive prediction system**.
 
 ---
 
-## Project Structure
+## 📊 Dataset
+- **Pima Indians Diabetes Dataset**
 
-```
-diabetes-xai-prediction
-│
-├── diabetes_prediction_xai.ipynb
-├── diabetes_prediction_xai.py
-├── setdiab.csv
-├── requirements.txt
-├── README.md
-│
-└── images
-    ├── confusion_matrix.png
-    ├── feature_importance.png
-    ├── shap_plot.png
-    └── streamlit_interface.png
-```
+### Features:
+- Glucose  
+- BMI  
+- Insulin  
+- Blood Pressure  
+- Age  
+- Diabetes Pedigree Function  
+
+### 🧹 Data Preprocessing
+- Replaced invalid zero values using **median imputation**
+- Performed **Stratified 80:20 train-test split**
 
 ---
 
-## Machine Learning Workflow
+## 🤖 Models Used
 
-1. Load and preprocess the dataset
-2. Split data into training and testing sets
-3. Train the **XGBoost classifier**
-4. Evaluate model performance
-5. Generate explainability outputs
-6. Deploy prediction interface using Streamlit
+| Model | Accuracy |
+|------|--------|
+| Logistic Regression | 70% |
+| Random Forest | 75% |
+| **XGBoost (Final Model)** | **76.6%** |
 
----
-
-## Explainable AI Techniques Used
-
-### Feature Importance
-Shows which features contribute most to the prediction.
-
-### SHAP (SHapley Additive Explanations)
-Explains how each feature influences the prediction output.
-
-### Counterfactual Explanation
-Shows how **small changes in patient attributes** could change the prediction outcome.
-
-Example:
-
-```
-If BMI decreases from 34 → 28
-and Glucose decreases from 180 → 140
-
-Prediction could change from High Risk → Low Risk
-```
+### 📈 Final Model Performance
+- Accuracy: **76.6%**
+- ROC-AUC: **0.822**
+- Improved Precision, Recall, and F1-score
 
 ---
 
-## Installation
+## 🔍 Explainable AI Techniques
 
-Install the required Python libraries using:
+### 1. SHAP (Global + Local Interpretability)
+- Identifies feature importance across the dataset  
+- Explains individual predictions  
 
-```
+**Key Insight:**  
+- Glucose and BMI are dominant risk factors  
+
+---
+
+### 2. LIME (Local Interpretability)
+- Explains predictions for individual instances  
+- Shows feature contribution (positive/negative impact)
+
+---
+
+### 3. Counterfactual Explanations
+- Suggests minimal changes to alter prediction outcomes  
+
+**Example:**
+- Reduce Glucose levels  
+- Reduce BMI  
+
+➡️ Provides **actionable insights**, not just predictions
+
+---
+
+## 🔄 Additional Simulations
+
+### 🧪 What-if Analysis
+- Modify input features dynamically  
+- Observe real-time changes in prediction probability  
+
+---
+
+### 💡 Health Recommendation System
+- Rule-based personalized suggestions  
+
+**Examples:**
+- High Glucose → Reduce sugar intake  
+- High BMI → Lifestyle modifications  
+
+---
+
+## 🖥️ Interactive Application
+Built using **Streamlit**
+
+### Features:
+- Real-time prediction  
+- SHAP visualizations  
+- LIME explanations  
+- What-if simulations  
+- Counterfactual insights  
+- Health recommendations  
+
+---
+
+## 🛠️ Tech Stack
+- Python  
+- XGBoost  
+- Scikit-learn  
+- SHAP  
+- LIME  
+- Streamlit  
+- Pandas  
+- NumPy  
+- Matplotlib  
+
+---
+
+## 📌 Key Contributions
+- Integrated **prediction + explainability + actionability**
+- Built an **interactive simulation system**
+- Bridged gap between:
+  - Model accuracy  
+  - Interpretability  
+  - Real-world usability  
+
+---
+
+## 🔮 Future Scope
+- Improve model sensitivity (reduce false negatives)  
+- Integrate real-time healthcare datasets  
+- Extend to multi-class diabetes risk levels  
+- Deploy as a clinical decision support tool  
+
+---
+
+## 📷 Results & Screenshots
+(Add your outputs here)
+- SHAP plots  
+- LIME explanations  
+- Streamlit UI  
+- Simulation results  
+
+---
+
+## 📎 How to Run
+
+```bash
+git clone <your-repo-link>
+cd diabetes-xai
 pip install -r requirements.txt
-```
-
----
-
-## Running the Streamlit App
-
-Run the application using:
-
-```
-streamlit run diabetes_prediction_xai.py
-```
-
-This will open the **Streamlit interface in your browser**, where users can:
-
-- Enter patient medical parameters
-- Get diabetes risk prediction
-- View explanation plots
-
----
-
-## Example Outputs
-
-The project generates visual outputs including:
-
-- Confusion Matrix
-- Feature Importance Plot
-- SHAP Explanation Plot
-- Streamlit Prediction Interface
-
-Screenshots of these outputs are available in the **images/** folder.
-
----
-
-## Technologies Used
-
-- Python
-- Pandas
-- NumPy
-- Scikit-learn
-- XGBoost
-- Matplotlib
-- SHAP
-- Streamlit
-
----
-
-## Future Improvements
-
-- Improve counterfactual explanation generation
-- Add additional medical datasets
-- Compare multiple ML models
-- Deploy the application online
-
----
-
-## Author
-
-Student Project – Machine Learning & Explainable AI
+streamlit run app.py
